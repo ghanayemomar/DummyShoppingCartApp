@@ -1,5 +1,5 @@
 import React from "react";
-import Meals from "./components/Meals/Meals";
+import Meals from "./components/Meals/Meals/Meals";
 import Header from "./components/Layout/Header";
 function App() {
   return (

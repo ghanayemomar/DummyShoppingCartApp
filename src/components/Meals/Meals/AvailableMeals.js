@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./AvailableMeals.module.css";
-import MealItem from "./MealItem/MealItem";
-import Card from "../Ul/Card";
+import MealItem from "../MealItem/MealItem";
+import Card from "../../Ul/Card";
 const DUMMY_MEALS = [
   {
     id: "m1",
@@ -34,7 +34,7 @@ const AvailableMeals = () => {
     <MealItem
       key={meal.id}
       name={meal.name}
-      description={meal.description}
+      desc={meal.description}
       price={meal.price}
     />
   ));
