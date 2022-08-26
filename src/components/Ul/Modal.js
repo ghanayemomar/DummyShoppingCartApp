@@ -6,7 +6,7 @@ const Backdrop = (props) => {
 };
 const ModalOverlay = (props) =>{
     return <div className={classes.modal}>
-        <div className={classes.content}></div>
+        <div className={classes.content}>{props.children}</div>
     </div>
 };
     const portalElemnt = document.getElementById('overlays')
