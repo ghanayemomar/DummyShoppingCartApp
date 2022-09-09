@@ -6,6 +6,7 @@ import Card from "../../Ul/Card";
 
 const AvailableMeals = () => {
   const [meals, setMeals] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     const fetchMeals = async () => {
       const response = await fetch(
@@ -22,15 +23,23 @@ const AvailableMeals = () => {
         });
       }
       setMeals(loadedMeals);
+      setIsLoading(false)
     };
     fetchMeals();
+    
   }, []);
+
+  if(isLoading){
+    return <section className={classes.MealsLoading}>
+      <p>Loading...</p>
+    </section>
+  }
   const mealsList = meals.map((meal) => (
     <MealItem
       id={meal.id}
       key={meal.id}
       name={meal.name}
-      description={meal.description}
+      desc={meal.description}
       price={meal.price}
     />
   ));
@@ -45,3 +54,4 @@ const AvailableMeals = () => {
 export default AvailableMeals;
 //hint: Use Effect Should Return a function not reaturn a promise so youcant excute the fetch function directrly inside it you have to put it inside an function inside the useEffect
 //async await to make sure that the function if got the Data from the backend
+//loading handling is very nice we made an a return section with if statemnt to check if it loading and show the loading paragraph
