@@ -7,8 +7,14 @@
 .MealsLoading{
   text-align: center;
   color: white;
-  font-size: 70px
+  font-size: 30px
 }
+.MealsError{
+  text-align: center;
+  color: red;
+  font-size: 30px
+}
+
   .meals ul {
     list-style: none;
     margin: 0;
