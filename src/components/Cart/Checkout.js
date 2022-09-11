@@ -43,7 +43,13 @@ const Checkout = (props) => {
     if (!formIsValid) {
       return;
     }
-    //submit the cart data code and i i dont wanna the code to reach it if the form is not valid!!
+    //submit the cart data code and i dont wanna the code to reach it if the form is not valid!!
+    props.onConfirm({
+      name: enteredName,
+      street: enteredStreet,
+      city: enteredCity,
+      postalCode: enteredPostalCode
+    });
   };
   const nameControlClasses = `${classes.control} ${
     formInputValidity.name ? '' : classes.invalid
